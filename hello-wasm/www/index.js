@@ -1,3 +1,11 @@
+let module;
+
 import("../pkg/index.js").then((r) => {
-    r.greet('Alpox');
-})
+  module = r;
+
+  r.greet("Alpox");
+});
+
+window.onAlert = (str) => {
+  module?.greet(str);
+};
